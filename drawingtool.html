@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Drawing Tool</title>
+    <style>
+
+        body {
+            background-color: rgb(206, 205, 205);
+            margin: 0;
+            font-family: monospace;
+        }
+        .main {
+            width: 1400px;
+    height: 160px;
+    position: fixed;
+    top: 2%;
+    left: 50%;
+    right: 15%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space_around;
+    transition: opacity .5s;
+    background-color: rgb(223, 221, 221);
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid rgb(223, 221, 221);;
+    margin-top: 50px;
+
+        }
+
+        .colors {
+            height: 130px;
+    display: flex;
+    align-items: center;
+    width: 621px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: whitesmoke;
+    border: black 1px solid;
+    border-radius: 9px;
+    
+        
+            
+            
+
+        }
+
+              
+
+        
+        #first {
+            background-color: #000;
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid rgb(255, 255, 255);
+            padding:3px;
+        }
+
+        #second {
+            background-color: rgb(124, 24, 24);
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+
+        #third {
+            background-color: orange;
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+
+        #fourth {
+            background-color: blue;
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+
+        #fifth {
+            background-color: purple;
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+
+        #sixth {
+            background-color:  #003f5c;
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+
+        #seventh {
+            background-color: rgb(92, 92, 18);
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+
+        #eigth{
+            background-color: rgb(39, 3, 48);
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+
+        #ninth {
+            background-color: pink;
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+        #one {
+            background-color: rgb(28, 4, 8);
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+        #two {
+            background-color: rgb(211, 181, 186);
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+        #three {
+            background-color: rgb(189, 71, 91);
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+        #four {
+            background-color: rgb(53, 28, 83);
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+        #five {
+            background-color: rgb(162, 203, 118);
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+        #six {
+            background-color: rgb(28, 74, 83);
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+        #seven {
+            background-color: rgb(28, 83, 36);
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+        #eight {
+            background-color: rgb(140, 72, 83);
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+        }
+
+        
+
+        
+
+
+        
+
+        .colordefault {
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+            margin-left: 7px;
+            border:3px solid white;
+            padding:3px;
+            background:conic-gradient(red,yellow,lime,aqua,blue,magenta,red);
+
+        }
+        
+
+
+        .hover {
+            transition: transform .5s;
+        }
+
+        .hover:hover{
+            border:solid black 3px;
+            transform: scale(1.2);
+        }
+
+        
+
+.tools {
+            height:130px;
+            display:flex;
+            align-items:center;
+            justify-content: space-around;
+            width:180px;
+            -ms-flex-wrap:wrap;
+            flex-wrap:wrap;
+            -ms-align-content:space-around;
+            align-content:space-around;
+            background-color: whitesmoke; 
+            border:black 1px solid;
+            margin-left:40px;
+            border-radius:9px;
+           
+
+}
+
+#toolsinner:hover {
+    background-color: aliceblue;
+}
+
+#toolsinner {
+    border:solid black 1px;
+    border-radius: 50%;
+    padding:2px;
+    margin:2px;
+    background-color: rgb(119, 117, 121);
+}
+
+
+
+.shapes {
+    
+            height:130px;
+            display:flex;
+            align-items:center;
+            -ms-justify-content:space-between;
+            justify-content: space-between;
+            justify-content: space-between;
+            width:210px;
+            -ms-flex-wrap:wrap;
+            flex-wrap:wrap;
+            -ms-align-content:space-around;
+            align-content:space-around;
+            background-color: whitesmoke; 
+            border:black 1px solid;
+            margin-left:40px;
+            border-radius:9px;
+
+
+}
+
+.shapes img{
+    height: 40px;
+    width: 40px;
+    margin:2px 2px;
+    padding: 3px 2px;
+    
+}
+
+.shapes img:hover {
+    opacity:0.4;
+}
+
+
+
+.bt {
+    background-color:whitesmoke ;
+    border:black 1px solid;
+    height:130px;
+    margin-left:40px;
+             border-radius:9px;
+             width:220px;
+
+}
+
+.brush{
+    
+    border: black 1px solid;
+    height: 40px;
+    margin-top: 15px;
+    background-color: rgb(236, 241, 245);
+    width: 130px;
+    margin-left: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.button {
+    
+    height: 50px;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    
+
+
+}
+select {
+    height:130px;
+    
+    
+}
+
+
+#myCanvas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            background-color: white;
+            border: 5px solid gray;
+            position: fixed;
+            top: 64%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: auto;
+            border-radius: 9px;
+            resize: both;
+        }  
+
+#font {
+    font-size: 20px;
+    font-family: monospace;
+}
+
+#ageOutputId{
+    color:#fff;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+
+
+ .taskbar {
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    height: 30px;
+    width: 100%;
+    justify-content: space-between;
+    padding-block: 8px;
+    margin-top: 12px;
+     
+    
+    
+
+
+} 
+
+.taskbar ul {
+    list-style: none;
+    font-size:20px;
+    font-weight:800;
+}
+
+.taskbar ul li{
+    display:inline;
+    padding: 4px 20px 4px 20px;
+   
+
+}
+
+.taskbar ul li i{
+    padding: 4px 20px 4px 20px;
+    /* margin-left:20px; */
+}
+
+.taskbar ul li:hover{
+    background-color: rgb(75, 75, 75);
+    padding: 4px 20px 4px 20px;
+    border-radius: 20px;
+}
+
+.select {
+    height:30px;
+    padding:3px;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 9px;
+    background-color: rgb(173, 6, 6);
+    color: #fff;
+    border: 3px solid white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: monospace;
+    /* margin-left: 18px; */
+    width: 100px;
+
+}
+
+.save{
+    background-color: #4568DC;
+}
+
+button:hover {
+    background-color: rgb(145, 197, 218);
+    color: #000;
+}
+
+
+span{
+    margin-left:60px;
+}
+
+.exit {
+    background-color: gray;
+    color: #000;
+    height: 16px;
+    margin-left: 0px;
+    height: 33px;
+    padding-bottom: 10px;
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.exit:hover{
+    background-color:rgb(240, 45, 45) !important;
+    
+}
+.taskbar-icons{
+    display: flex;
+    padding: 0;
+}
+.taskbar-icons li{
+    padding: 0 !important;
+}
+.task {
+    display: flex;
+}
+.heading-draw{
+    position: absolute;
+    left: 45%;
+}
+
+
+
+        
+
+    </style>
+</head>
+<body>
+ <div class="taskbar">
+    <div class="task">
+    <ul>
+        <li>File
+    <b id="font"></b> <select name="select" class="select" style="background:transparent; border:0px; padding:0px;width:15px">
+        <option selected="selected" value=""></option>
+        <option value="New"> New </option>
+        <option value="Open"> Open </option>
+        <option value="Save"> Save</option>
+        <option value="Save As"> Save As </option>
+        <option value="Print"> Print</option>
+        <option value="Send"> Send</option>
+    </select>
+        </li>
+        <li>Edit
+    <b id="font"> </b> <select name="select" class="select"style="background:transparent; border:0px; padding:0px;width:15px">
+        <option value=""></option>
+        <option value="cut"> Cut    Ctrl+X </option>
+        <option value="copy">Copy   Ctrl+C </option>
+        <option value="paste">Paste   Ctrl+V</option>
+    </select>
+        </li>
+        
+        <li>View
+
+    <b id="font"></b> <select name="select" class="select" style="background:transparent; border:0px; padding:0px;width:15px">
+        <option value=""></option>
+        <option value="Zoom"> Zoom </option>
+        <option value="Rulers"> Rulers   Ctrl+R </option>
+        <option value="Gridlines"> Gridlines    Ctrl+G</option>
+        <option value="Status bar"> Status bar </option>
+        <option value="Full screen"> Full screen</option>
+        <option value="Thumbnail"> Thumbnail</option>
+    </select>
+    </li>
+</ul>
+<ul class="taskbar-icons">
+    <li class=""><i class="fa-regular fa-floppy-disk" onclick="save()" title="Save (Ctrl+S)"></i></li>
+    <li><i class="fa-solid fa-rotate-left"></i></li>
+    <li><i class="fa-solid fa-rotate-right"></i></li>
+
+
+    </ul>
+</div>
+<h1 class="heading-draw">Drawing Tool</h1>
+    <button class="exit" onclick="showconfirm()">Close</button>
+
+
+
+    
+    
+
+</div>    
+    <div class="main">
+        <div class="colors">
+            <div class="hover" id="first"></div>
+            <div class="hover" id="second"></div>
+
+
+            <div class="hover" id="third"></div>
+            <div class="hover" id="fourth"></div>
+
+            <div class="hover" id="fifth"></div>
+            <div class="hover" id="sixth"></div>
+            <div class="hover" id="seventh"></div>
+            <div class="hover" id="eigth"></div>
+            <div class="hover" id="ninth"></div>
+            <div class="hover" id="tenth"></div> 
+            <div class="hover" id="one"></div>
+            <div class="hover" id="two"></div>
+            <div class="hover" id="three"></div>
+            <div class="hover" id="four"></div>
+            <div class="hover" id="five"></div>
+            <div class="hover" id="six"></div>
+            <div class="hover" id="seven"></div>
+            <div class="hover" id="eight"></div>
+            <div class="colordefault">
+                <input type="color" value="#FFFFFF" id="favcolor" style="width:20px;height:20px;border:1px solid white;border-radius:50%" title="Edit Colors">
+            </div>
+            <div class="hover" id="thirteen"></div>
+            <div class="hover" id="fourteen"></div>
+            <div class="hover" id="fifteen"></div>
+            <div class="hover" id="sixteen"></div>
+        </div>
+        
+
+        <div class="tools">
+                
+            
+                <img src="https://cdn-icons-png.flaticon.com/128/65/65607.png"  id="toolsinner" height="40px" alt="" title="Brush">
+                <img src="https://cdn-icons-png.flaticon.com/128/3219/3219071.png" id="toolsinner" height="40px" alt="" title="Eraser">
+                <img src="https://cdn-icons-png.flaticon.com/128/8039/8039131.png" id="toolsinner" height="40px" title="Fill">
+                <img src="https://cdn-icons-png.flaticon.com/128/4329/4329079.png" id="toolsinner" height="40px" title="Colour picker">
+                <img src="https://icons.veryicon.com/png/o/miscellaneous/flat-wireframe-library/magnifying-glass-plus.png" id="toolsinner" height="40px" title="Magnifier">
+                <img src="https://cdn-icons-png.flaticon.com/128/2280/2280532.png" id="toolsinner" height="40px" title="Pencil">
+            
+              
+
+
+            </div>
+
+            <div class="shapes">
+                <img id="myImage" src="https://ouch-cdn2.icons8.com/pUEr4JDO2RnXfUkT3BLQUkxMmNTe97QmIrLSeNNdxj0/rs:fit:368:368/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMzQv/MGRiYWVjNDYtOGZm/Yi00OGZjLWE0ZmMt/NmU1YjE5MzJlZDE2/LnN2Zw.png" height="40px" onclick="loadImage()" title="Circle">
+                <img id="myImage1" src="https://ouch-cdn2.icons8.com/scD5UO0h8HudeLURkAvfGUkU55RcrDAeG8ONHgYSfW8/rs:fit:368:188/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvODMz/L2MyM2Q0MjU4LWQ0/YWUtNDZlNi1hN2Nl/LWNiNmM4ZTY1MGVi/Yy5zdmc.png" height="35px" onclick="loadImage1()" title="Parallelogram">
+                <img id="myImage2" src="https://ouch-cdn2.icons8.com/zRyb6g3DXjUh4WUqG6dTZlt8TF0UMgA-YdL14JQAY3s/rs:fit:368:368/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNDgz/L2MyMTUwZDkwLWNl/NjMtNDc1Ni05YmFh/LTNjZmYyYjA2NmNj/My5zdmc.png" height="35px" onclick="loadImage2()" title="Square">
+                <img id="myImage3" src="https://ouch-cdn2.icons8.com/cG1tSEU5wJbqbgXwmcuV_sf5JXlDqEtQOhdoJuycg5U/rs:fit:368:319/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNTA4/LzE5YWE5YWU3LTky/YTYtNDlmMC1hMTEx/LTU1ZDFiYmVjOTBi/Ni5zdmc.png" height="31px" onclick="loadImage3()" title="Triangle">
+                <img  id="myImage4" src="https://ouch-cdn2.icons8.com/Emwtyslo6X-EhOVdiDFp37F_0n4dtaDxnPQT3e9ie3s/rs:fit:368:410/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMTkz/LzlmYWVmZmRkLWNh/ZmEtNGUzOS1hNjlk/LThiOTQ1YmE2NDI5/NS5zdmc.png" height="36px"  onclick="loadImage4()" title="Rhombus">
+                <img id="myImage5" src="https://ouch-cdn2.icons8.com/nC_fVIQ5rDHXIZW8OlGImFcKOWR414ZSK-IlxIkddp0/rs:fit:368:349/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNTQx/L2Y2N2E1NDNkLWI4/ZWEtNDdkNS04ZjAw/LWQwNzc3ZTc1YWEw/ZC5zdmc.png"  height="33px"  onclick="loadImage5()" title="Star">
+                <img id="myImage6" src="https://ouch-cdn2.icons8.com/IAaUotAQhs0hiRiRKPy96X0fyGwSN_Zsv3Y-u4-n_1A/rs:fit:368:426/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNi9m/YjNjYzIwMy0wZjc2/LTRmZGYtYjMzYy0x/YWUwNWRiNWI3MGQu/c3Zn.png" height="35px"  onclick="loadImage6()" title="Hexagon">
+                <img id="myImage7" src="https://ouch-cdn2.icons8.com/JQyI2tNlITOB6W-VnurMBV-aLoN8WjARyXBK4FV2bN8/rs:fit:368:368/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNTM2/L2VhMmViMGY5LTA4/N2MtNDMwNS04MTdk/LWJjZjkxZWUyYmYy/ZC5zdmc.png" height="32px"  onclick="loadImage7()" title="Right triangle">
+                
+                
+            
+            </div>
+            <div class="bt">
+            
+                <div class="brush">
+                   <b id="font"> Brushes</b> <select name="select" style="background:transparent; border:0px; padding:0px;width:20px; height:30px; ">
+            
+                      <option value="Brush" > Brush </option>
+                      <option value="Calligraphy brush"> Calligraphy brush </option>
+                      <option value="Calligraphy pen"> Calligraphy pen </option>
+                      <option value="Airbrush"> Airbrush </option>
+                      <option value="Oil brush"> Oil brush</option>
+                      <option value="Crayon"> Crayon</option>
+                      <option value="Marker"> Marker</option>
+                      <option value="Natural pencil"> Natural pencil</option>
+                      <option value="Watercolour brush"> Watercolour brush</option>
+                   </select>
+                </div>
+                <div class="button">
+                  <button class="clear" onclick="clearCanvas()"> Clear </button>
+                  <button class="save" onclick="save()"> Save </button>
+                </div>
+            </div>
+             
+            <div></div>
+        
+
+            
+        </div>
+        
+
+        
+
+    </div>
+    </div>
+    <canvas id="myCanvas" height="560" width="1700" style="border:3px solid gray";></canvas>
+
+    <script>
+
+const canvas = document.getElementById('myCanvas');
+const context = canvas.getContext('2d');
+const undoStack = [];
+const redoStack = [];
+undoStack.push(context.getImageData(0, 0, canvas.width, canvas.height));
+
+function saveToUndoStack() {
+    const currentState = context.getImageData(0, 0, canvas.width, canvas.height);
+    undoStack.push(currentState);
+
+    // Clear redoStack when a new action is performed
+    redoStack.length = 0;
+}
+
+function undo() {
+    if (undoStack.length > 1) {
+        const currentState = undoStack.pop();
+        redoStack.push(currentState);
+
+        const previousState = undoStack[undoStack.length - 1];
+        context.putImageData(previousState, 0, 0);
+    } else {
+        clearCanvas();
+    }
+}
+
+function redo() {
+    if (redoStack.length > 0) {
+        const nextState = redoStack.pop();
+        undoStack.push(nextState);
+
+        context.putImageData(nextState, 0, 0);
+    }
+}
+
+
+const undoIcon = document.querySelector('.fa-rotate-left');
+const redoIcon = document.querySelector('.fa-rotate-right');
+
+undoIcon.addEventListener('click', undo);
+redoIcon.addEventListener('click', redo);
+
+
+
+let selectedShape = null;
+        
+        
+          
+  
+  
+        function loadImage() {
+    const image = document.getElementById('myImage');
+    const imageWidth = 150;
+    const imageHeight = 150;
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(image, 5, 5, imageWidth, imageHeight);
+
+    // Save the current canvas state to the undo stack
+    saveToUndoStack();
+};
+  
+  function loadImage1 (){
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+  
+  
+      var image= document.getElementById('myImage1');
+  
+      var imageWidth = 150;
+      var imageHeight = 150;
+  
+  
+      context.drawImage(image, 300, 5, imageWidth, imageHeight);
+      saveToUndoStack();
+  };
+  
+  function loadImage2 (){
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+  
+  
+      var image= document.getElementById('myImage2');
+  
+      var imageWidth = 150;
+      var imageHeight = 150;
+  
+  
+      context.drawImage(image, 600, 5, imageWidth, imageHeight);
+      saveToUndoStack();
+  };
+
+  function loadImage3 (){
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+  
+  
+      var image= document.getElementById('myImage3');
+  
+      var imageWidth = 150;
+      var imageHeight = 150;
+  
+  
+      context.drawImage(image, 900, 5, imageWidth, imageHeight);
+      saveToUndoStack();
+  };
+
+  function loadImage4 (){
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+  
+  
+      var image= document.getElementById('myImage4');
+  
+      var imageWidth = 150;
+      var imageHeight = 150;
+  
+  
+      context.drawImage(image, 1200, 5, imageWidth, imageHeight);
+      saveToUndoStack();
+  };
+
+  function loadImage5 (){
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+  
+  
+      var image= document.getElementById('myImage5');
+  
+      var imageWidth = 150;
+      var imageHeight = 150;
+  
+  
+      context.drawImage(image, 1500, 5, imageWidth, imageHeight);
+      saveToUndoStack();
+  };
+
+  function loadImage6 (){
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+  
+  
+      var image= document.getElementById('myImage6');
+  
+      var imageWidth = 150;
+      var imageHeight = 150;
+  
+  
+      context.drawImage(image, 5, 300, imageWidth, imageHeight);
+      saveToUndoStack();
+  };
+
+  function loadImage7 (){
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+  
+  
+      var image= document.getElementById('myImage7');
+  
+      var imageWidth = 150;
+      var imageHeight = 150;
+  
+  
+      context.drawImage(image, 300, 300, imageWidth, imageHeight);
+      saveToUndoStack();
+  };
+  
+  const shapeElements = document.querySelectorAll('.shapes img');
+shapeElements.forEach(shapeElement => {
+    shapeElement.addEventListener('click', function () {
+        selectedShape = shapeElement;
+        drawSelectedShape();
+    });
+});
+
+const colorElements = document.querySelectorAll('.hover');
+colorElements.forEach(colorElement => {
+    colorElement.addEventListener('click', function () {
+        if (selectedShape) {
+            handleColorSelection(colorElement);
+        } else {
+            handleCanvasBackgroundColor(colorElement);
+        }
+    });
+});
+
+function handleCanvasBackgroundColor(colorElement) {
+    const selectedColor = window.getComputedStyle(colorElement).backgroundColor;
+    const canvas = document.getElementById('myCanvas');
+    canvas.style.backgroundColor = selectedColor;
+}
+
+
+const customColorInput = document.getElementById('favcolor');
+
+      customColorInput.addEventListener('input', function () {
+    if (selectedShape) {
+        handleCustomColorSelection(customColorInput);
+    }  else {
+        handleCanvasCustomBackgroundColor(customColorInput);
+    }
+});
+
+
+function handleCanvasCustomBackgroundColor(customColorInput) {
+    const customColor = customColorInput.value;
+    const canvas1 = document.getElementById('myCanvas');
+    canvas1.style.backgroundColor = customColor;
+}
+
+function drawSelectedShape() {
+    const canvas = document.querySelector('#myCanvas');
+    const context = canvas.getContext('2d');
+    const image = selectedShape.cloneNode(true);
+    context.clearRect(600, 1200, canvas.width, canvas.height);
+    context.drawImage(image, 0, 0, 0, 0); 
+}
+
+function handleColorSelection(colorElement) {
+    const selectedColor = window.getComputedStyle(colorElement).backgroundColor;
+    fillShapeWithColor(selectedColor);
+}
+
+function handleCustomColorSelection(customColorInput) {
+    const customColor = customColorInput.value;
+    fillShapeWithColor(customColor);
+}
+
+function fillShapeWithColor(color) {
+    const canvas = document.querySelector('#myCanvas');
+    const context = canvas.getContext('2d');
+
+    
+    drawSelectedShape();
+
+    // Fill the background with the selected color
+    context.globalCompositeOperation = 'source-in';
+    context.fillStyle = color;
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Reset the globalCompositeOperation to default
+    context.globalCompositeOperation = 'source-over';
+}
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          function showconfirm() {
+              var exitConfirmed = confirm("Do you want to exit?");
+              if (exitConfirmed) {
+                  window.close();
+              }
+          };
+  
+          function clearCanvas() {
+    const canvas = document.getElementById('myCanvas');
+    const context = canvas.getContext('2d');
+    
+    // Clear the entire canvas
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    
+    
+    canvas.style.backgroundColor = 'white';
+}
+
+  
+  function save() {
+      var savealert = alert("Your work has been saved");
+  };
+  
+
+  
+  
+     </script>
+      </body>
+      </html>

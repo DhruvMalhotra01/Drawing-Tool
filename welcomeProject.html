@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+            font-family: sans-serif
+        }
+        .main{
+            min-height: 100vh;
+            background-image:url("https://w7.pngwing.com/pngs/611/327/png-transparent-purple-gradient-watercolor-background-purple-gradual-change-blue-thumbnail.png");
+            
+            background-repeat: no-repeat;
+            background-size:cover;
+            
+        }
+        .container{
+            width:85%;
+            margin:auto;
+        }
+        nav{
+            height: 80px;
+            
+        }
+        nav h1{
+            float: left;
+            line-height:80px;
+            font-size: 48px;
+            font-size:inline;
+            color:rgb(3, 3, 107);
+
+        }
+        nav ul{
+            float:right;
+            line-height:80px;
+
+        }
+        nav ul li{
+            display: inline-block;
+            list-style:  none;
+            padding:0px 5px;
+            font-size: 20px;
+            margin-right: 29px;
+        }
+        nav ul li a{
+            color:#fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 5px;
+            padding:7px 8px;
+        }
+        nav ul li a:hover{
+            background-color:#f93f35c0;
+            transition: 0.5s ease;
+
+        }
+        nav ul li .active{
+            background-color: #f93f35c0;
+        }
+        .article{
+            width: 50%;
+            margin:auto;
+            text-align: center;
+            transform: translateY(20vh);
+            
+        }
+        .article h1{
+            font-size: 59px;
+            color:#fff;
+            letter-spacing:1.5px;
+            font-weight: 800;
+            margin: 25px;
+
+        }
+        .article p{
+            font-size: 23px;
+            color:#fff;
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 50px;
+        }
+        .btn{
+            color:#fff;
+            padding: 15px 26px;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-color: #f93f35c0;
+            border-radius: 8px;
+            font-size: 25px;
+            position: absolute;
+            bottom: 90px;
+            margin-left:720px;
+
+            
+            
+            
+            
+            
+            
+
+        }
+        .btn:hover{
+            background-color: #054b9c;
+        }
+
+        .about {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+        }
+
+        .about h1 {
+            color: #0742a1;
+            text-align: center;
+            font-size: 45px;
+        }
+
+        .about h3 {
+            color: #317ffb;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        
+        section .about {
+            line-height: 1.6;
+        }
+
+        .about {
+            background-image: url("https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3RwMjU2LWJhY2tncm91bmQtMDgteC5qcGc.jpg");
+            border-radius: 30px;
+            box-shadow:0 0 18px #3f3f3f;
+        
+        background:linear-gradient(rgb(245, 212, 217),rgb(151, 209, 245))}
+
+        .contact {
+            background-color: #f7f7f7;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .col {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .information p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .contact-details {
+            text-align: left;
+        }
+
+        .form input,
+        .form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form button:hover {
+            background-color: #2980b9;
+        }
+
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+       
+        footer div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .link a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        .back {
+    margin-left: 680px;
+    font-size: 20px;
+    width: 100px;
+    bottom: 0;
+    background-color: rgb(139, 152, 176);
+    font-weight: 600;
+    border-radius: 40px;
+    color: white; 
+    padding: 10px 20px; 
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    text-decoration: none;
+}
+
+.back:hover {
+    background-color: #98c5e1; 
+}
+
+button a {
+    text-decoration: none;
+}
+
+
+
+        
+    </style>
+</head>
+<body>
+    
+        
+    <section class="main">
+        <div class="container">
+            <nav>
+                <h1></h1>
+
+                <ul>
+                    <li><a href="#" class="active" id="home">Home</a></li>
+                    <li><a href="#abt">About</a></li>
+
+                    
+                    <!-- <li><a href="#">Project</a></li> -->
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="article">
+                <h1>SketchCraft: Unleashing Your Imagination</h1>
+                <p>In the digital age, where imagination knows no bounds, a drawing tool becomes more than just lines and colors. It’s a gateway to expression, a canvas where ideas come alive. Whether you’re a seasoned artist or a curious beginner, this tool bridges the gap between vision and reality.</p>
+            </div>
+                <a href="login.html" target="_blank" class="btn">Login</a>
+
+            
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+    <section class="about" id="abt">
+        <h1>The Drawing Tool</h1>
+        <br>
+        <br>
+        <pre>
+The drawing tool is a versatile and user-friendly application designed to cater to the artistic needs of users, from amateur doodlers to professional artists. Packed with an array of features, it provides an intuitive platform to unleash creativity and bring imaginations to life.
+
+<b>Key Features:</b>
+
+1. Brush Selection:
+
+A diverse selection of brushes catering to different artistic styles, from pencil sketches to watercolor paintings.
+Customizable brush sizes and shapes for fine-tuning the level of detail.
+
+2. Color Palette:
+
+A rich color palette offering an extensive range of colors and gradients.
+Custom color creation for personalized artistic expression.
+
+3. Undo/Redo Functionality:
+
+Seamlessly correct mistakes or experiment with different ideas without the fear of irreversible changes.
+
+
+<h3>Special Tools:</h3>
+
+1. Pencil and Eraser:
+
+Fine-tune your sketches with a pencil tool for intricate detailing.
+Effortlessly correct and modify your work with a versatile eraser tool.
+
+2. Shape Tools:
+
+Instantly create geometric shapes for structured designs.
+
+
+User Interface:
+
+An intuitive and user-friendly interface designed to minimize the learning curve.
+Easily accessible tools and settings for a seamless drawing experience.
+
+Compatibility:
+
+Cross-platform compatibility for use on desktops, tablets, and mobile devices.
+Cloud synchronization for accessing your work from multiple devices.
+        </pre>
+        <button class="back"><a href="#home">Home</a></button> 
+
+       
+    </section>
+    
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section class="contact" id="contact">
+        <h1>Contact Us</h1>
+        <br>
+        <p>Reach out to us for any inquiries or feedback.</p>
+        <div class="row">
+          <div class="col information">
+            <div class="contact-details">
+              <p><i class="fas fa-map-marker-alt"></i> 123 Campsite Avenue, Wilderness, CA 98765</p>
+              <p><i class="fas fa-envelope"></i> deepshikha1234@gmail.com</p>
+              <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+              <p><i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 5:00 PM</p>
+              <p><i class="fas fa-clock"></i> Saturday: 10:00 AM - 3:00 PM</p>
+              <p><i class="fas fa-clock"></i> Sunday: Closed</p>
+              <p><i class="fas fa-globe"></i> www.drawingweb.com</p>
+            </div>          
+          </div>
+          <div class="col form">
+            <form>
+              <input type="text" placeholder="Name*" required>
+              <input type="email" placeholder="Email*" required>
+              <textarea placeholder="Feedback" required ></textarea>
+              <button id="submit" type="submit">Send Feedback</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        
+        <div>
+          <span>Copyright © 2023 All Rights Reserved</span>
+          <span class="link">
+              <a href="#home"><b><h3>Home</h3></b></a>
+          </span>
+        </div>
+      </footer>
+      
+    
+    
+    
+</body>
+</html>
